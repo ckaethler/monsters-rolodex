@@ -1,10 +1,15 @@
 import React from 'react';
+import Card from '../Card/Card';
 import './CardList.css';
 
-export const CardList = (props) => {
+const CardList = (props) => {
     return(
         <div className='card-list'>
-            {props.children}
+            {props.monsters.map((monster, index) => {
+              return <Card monster={monster} key={index}/>
+            })}
         </div>
     );
 }
+
+export default CardList;
